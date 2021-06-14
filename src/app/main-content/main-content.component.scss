@@ -1,5 +1,7 @@
 /* Credit: https://codepen.io/yildirimzlm/pen/mGKzEz */
 /* Huge thanks to the author for the css code below*/
+@import '../../styles.scss';
+
 .main-page {
   margin: 0;
   padding: 0;
@@ -34,7 +36,7 @@
       position: relative;
       top: 0;
       left: 0;
-      height: 100px;
+      height: 25px;
       border-radius: 32px 32px 0 0;
       .frame-header {
         position: absolute;
