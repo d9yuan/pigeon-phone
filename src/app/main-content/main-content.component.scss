@@ -1,0 +1,99 @@
+/* Credit: https://codepen.io/yildirimzlm/pen/mGKzEz */
+/* Huge thanks to the author for the css code below*/
+.main-page {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Open Sans',sans-serif;
+}
+
+.frame {
+  width: 320px;
+  height: 650px;
+  background-color: #ffffff;
+  position: relative;
+  margin: 50px auto;
+  border: 6px solid #bdbbbb;
+  border-radius: 50px;
+  box-shadow: 14px 21px 42px 10px rgba(0, 0, 0, .2);
+
+  &-content {
+    width: 292px;
+    height: 622px;
+    background-color: #ffffff;
+    border: 16px solid #202020;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 47px;
+
+    &-header {
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 100px;
+      border-radius: 32px 32px 0 0;
+      .frame-header {
+        position: absolute;
+        width: 170px;
+        height: 24px;
+        top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #202020;
+        border-radius: 0 0 23px 23px;
+
+        &-speaker {
+          margin-top: 6px;
+          width: 40px;
+          height: 4px;
+          background-color: #404040;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        &-camera {
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          right: 40px;
+          top: 2px;
+          background-color: #090A50;
+          border: 3px solid #404040;
+          border-radius: 50%;
+
+        }
+      }
+    }
+
+
+    }
+    .frame-content-bottom {
+      position: absolute;
+      bottom: 0;
+      height: 28px;
+      width: 100%;
+      border-radius: 0 0 30px 30px;
+
+      .bottom-shape {
+        width: 110px;
+        height: 4px;
+        margin-top: 15px;
+        background-color: #c8c8c8;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 3px;
+        transition: all .3s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #323232;
+        }
+
+      }
+    }
+
+}
