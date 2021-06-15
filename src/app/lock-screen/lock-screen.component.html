@@ -2,43 +2,43 @@
     <div class='lock-screen-prompt'>
         <div class='prompt-message'>Enter Passcode</div>
         <div class='input-bubble-indicator'>
-            <div class='bubble-1'></div>
-            <div class='bubble-2'></div>
-            <div class='bubble-3'></div>
-            <div class='bubble-4'></div>
+            <div class='bubble-1' [style.background-color]="bubbleFilled[0] ? '#bbb' : '#fff'"></div>
+            <div class='bubble-2' [style.background-color]="bubbleFilled[1] ? '#bbb' : '#fff'"></div>
+            <div class='bubble-3' [style.background-color]="bubbleFilled[2] ? '#bbb' : '#fff'"></div>
+            <div class='bubble-4' [style.background-color]="bubbleFilled[3] ? '#bbb' : '#fff'"></div>
         </div>
     </div>
     <div class='lock-screen-digits'>
-        <div class='passcode-1'>
+        <div #digit1 class='passcode-1' (click)='passcodePressHandler(digit1.innerText)'>
             <div class='digit-text'>1</div>
         </div>
-        <div class='passcode-2'>
+        <div #digit2 class='passcode-2' (click)='passcodePressHandler(digit2.innerText)'>
             <div class='digit-text'>2</div>
         </div>
-        <div class='passcode-3'>
+        <div #digit3 class='passcode-3' (click)='passcodePressHandler(digit3.innerText)'>
             <div class='digit-text'>3</div>
         </div>
-        <div class='passcode-4'>
+        <div #digit4 class='passcode-4' (click)='passcodePressHandler(digit4.innerText)'>
             <div class='digit-text'>4</div>
         </div>
-        <div class='passcode-5'>
+        <div #digit5 class='passcode-5' (click)='passcodePressHandler(digit5.innerText)'>
             <div class='digit-text'>5</div>
         </div>
-        <div class='passcode-6'>
+        <div #digit6 class='passcode-6' (click)='passcodePressHandler(digit6.innerText)'>
             <div class='digit-text'>6</div>
         </div>
-        <div class='passcode-7'>
+        <div #digit7 class='passcode-7' (click)='passcodePressHandler(digit7.innerText)'>
             <div class='digit-text'>7</div>
         </div>
-        <div class='passcode-8'>
+        <div #digit8 class='passcode-8' (click)='passcodePressHandler(digit8.innerText)'>
             <div class='digit-text'>8</div>
         </div>
-        <div class='passcode-9'>
+        <div #digit9 class='passcode-9' (click)='passcodePressHandler(digit9.innerText)'>
             <div class='digit-text'>9</div>
         </div>
         <div class='passcode-empty'>
         </div>
-        <div class='passcode-0'>
+        <div #digit0 class='passcode-0' (click)='passcodePressHandler(digit0.innerText)'>
             <div class='digit-text'>0</div>
         </div>
         <div class='passcode-empty'>

@@ -8,7 +8,7 @@ div .lock-screen-prompt {
     text-align: center;
     .prompt-message {
         color: #1b1b1bf8;
-        font-size: 25px;
+        font-size: 15px;
         padding-left: 10px;
     }
     .input-bubble-indicator {
@@ -18,10 +18,10 @@ div .lock-screen-prompt {
         div[class^="bubble-"]{
             display: inline-block;
             position: relative;
-            height: 10px;
-            width: 10px;
-            border: 2px solid #3a3a3856;
-            border-radius: 10px;
+            height: 7px;
+            width: 7px;
+            border: 1.5px solid #3a3a3856;
+            border-radius: 7px;
         }
     }
 
@@ -45,6 +45,7 @@ div[class^="passcode-"] {
     border-radius: 35px;
     display: inline-block;
     margin: 8px 8px;
+    cursor: pointer;
     &.passcode-empty {
         display: none;
     }

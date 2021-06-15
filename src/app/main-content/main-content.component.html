@@ -7,9 +7,9 @@
                     <div class="frame-header-camera"></div>
                 </div>
             </div>
-            <app-lock-screen></app-lock-screen>
+            <ng-container #ActivePage></ng-container> 
             <div class="frame-content-bottom">
-                <div class="bottom-shape"></div>
+                <div class="bottom-shape" (click)='bottomBarHandler();'></div>
             </div>
         </div>
     </div>
