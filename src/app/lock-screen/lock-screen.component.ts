@@ -8,11 +8,16 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 export class LockScreenComponent implements OnInit {
   private receivedPasscodeStroke: string = '';
   private secretPasscode: string = '1234';
+  public buttonDisabled: boolean = false;
   public bubbleFilled: boolean[] = [false, false, false, false];
   public passcodeCorrect: EventEmitter<string> = new EventEmitter<string>();
   constructor() { }
   public passcodePressHandler(digit: string): void {
     console.log(`${digit} pressed!`);
+    this.buttonDisabled = true;
+    setTimeout(() => {
+      this.buttonDisabled = false;
+    }, 200);
     this.passcodeReceivedHandler(digit);
   }
 
