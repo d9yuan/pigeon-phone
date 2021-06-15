@@ -18,7 +18,7 @@ export class LockScreenComponent implements OnInit {
 
   public passcodeReceivedHandler(digit: string): void {
     this.receivedPasscodeStroke += digit;
-    this.bubbleFilled = this.bubbleFilled.map( (element, index) => index < this.receivedPasscodeStroke.length ? true : false);
+    this.bubbleFilled = this.bubbleFilled.map( (element, index) => index < this.receivedPasscodeStroke.length);
     if (this.receivedPasscodeStroke.length === 4 && this.receivedPasscodeStroke === this.secretPasscode) {
       this.passcodeCorrect.emit('passcode correct');
       this.bubbleFilled = [false, false, false, false];
@@ -26,8 +26,10 @@ export class LockScreenComponent implements OnInit {
     }
     else if (this.receivedPasscodeStroke.length === 4 && this.receivedPasscodeStroke !== this.secretPasscode) {
       this.passcodeCorrect.emit('passcode not correct');
-      this.bubbleFilled = [false, false, false, false];
-      this.receivedPasscodeStroke = '';
+      setTimeout(() => {
+        this.bubbleFilled = [false, false, false, false];
+        this.receivedPasscodeStroke = '';
+      }, 200);
     }
   }
   public ngOnInit(): void {

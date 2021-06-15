@@ -25,7 +25,9 @@ export class MainContentComponent implements AfterViewInit {
     if (this.activeComponent === LockScreenComponent){
       (<LockScreenComponent>componentRef?.instance).passcodeCorrect.subscribe(passcodeMsg => {
                                                                                 console.log(passcodeMsg);
-                                                                                this.loadComponent(this.componentSelector.homeScreen);
+                                                                                if (passcodeMsg === 'passcode correct') {
+                                                                                  this.loadComponent(this.componentSelector.homeScreen);
+                                                                                }
                                                                             });
     }
   }
