@@ -34,7 +34,8 @@ div .lock-screen-digits {
     padding: 10px;
     text-align:center;
 }
-div[class^="passcode-"] {
+
+button[class^="passcode-"] {
     text-align: center;
     font-size: 42px;
     font-weight: 100;
@@ -46,6 +47,8 @@ div[class^="passcode-"] {
     display: inline-block;
     margin: 8px 8px;
     cursor: pointer;
+    background: transparent;
+    padding: 0;
     &.passcode-empty {
         display: none;
     }
@@ -53,5 +56,5 @@ div[class^="passcode-"] {
 
 div .digit-text {
     color: #1b1b1bf8;
-    padding-top: 6px;
+    padding-top: 2px;
 }
