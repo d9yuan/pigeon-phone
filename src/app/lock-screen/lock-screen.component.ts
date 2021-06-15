@@ -15,10 +15,10 @@ export class LockScreenComponent implements OnInit {
   public passcodePressHandler(digit: string): void {
     console.log(`${digit} pressed!`);
     this.buttonDisabled = true;
+    this.passcodeReceivedHandler(digit);
     setTimeout(() => {
       this.buttonDisabled = false;
     }, 200);
-    this.passcodeReceivedHandler(digit);
   }
 
   public passcodeReceivedHandler(digit: string): void {
