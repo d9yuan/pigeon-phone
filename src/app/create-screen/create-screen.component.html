@@ -1,0 +1,50 @@
+<div class='create-screen-page'>
+    <div class='create-screen-prompt'>
+        <div class='prompt-message' *ngIf='noPassword'>Create Passcode</div>
+        <div class='prompt-message' *ngIf='!noPassword && !wrongPassword && !passcodeSaved'>Confirm Passcode</div>
+        <div class='prompt-message-error' *ngIf='!noPassword && wrongPassword'>Passcode does not match</div>
+        <div class='prompt-message-saved' *ngIf='!noPassword && !wrongPassword && passcodeSaved'>Passcode Saved</div>
+        <div class='input-bubble-indicator'>
+            <div class='bubble-1' [style.background-color]="bubbleFilled[0] ? '#bbb' : '#fff'"></div>
+            <div class='bubble-2' [style.background-color]="bubbleFilled[1] ? '#bbb' : '#fff'"></div>
+            <div class='bubble-3' [style.background-color]="bubbleFilled[2] ? '#bbb' : '#fff'"></div>
+            <div class='bubble-4' [style.background-color]="bubbleFilled[3] ? '#bbb' : '#fff'"></div>
+        </div>
+    </div>
+    <div class='create-screen-digits'>
+        <button class='passcode-1' (click)='passcodePressHandler("1")'>
+            <div class='digit-text'>1</div>
+        </button>
+        <button class='passcode-2' (click)='passcodePressHandler("2")'>
+            <div class='digit-text'>2</div>
+        </button>
+        <button class='passcode-3' (click)='passcodePressHandler("3")'>
+            <div class='digit-text'>3</div>
+        </button>
+        <button class='passcode-4' (click)='passcodePressHandler("4")'>
+            <div class='digit-text'>4</div>
+        </button>
+        <button class='passcode-5' (click)='passcodePressHandler("5")'>
+            <div class='digit-text'>5</div>
+        </button>
+        <button class='passcode-6' (click)='passcodePressHandler("6")'>
+            <div class='digit-text'>6</div>
+        </button>
+        <button class='passcode-7' (click)='passcodePressHandler("7")'>
+            <div class='digit-text'>7</div>
+        </button>
+        <button class='passcode-8' (click)='passcodePressHandler("8")'>
+            <div class='digit-text'>8</div>
+        </button>
+        <button class='passcode-9' (click)='passcodePressHandler("9")'>
+            <div class='digit-text'>9</div>
+        </button>
+        <button class='passcode-empty'>
+        </button>
+        <button class='passcode-0' (click)='passcodePressHandler("0")'>
+            <div class='digit-text'>0</div>
+        </button>
+        <button class='passcode-empty'>
+        </button>
+    </div>
+</div>

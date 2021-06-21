@@ -1,0 +1,58 @@
+// Reference https://codepen.io/ahart814/pen/yLNMZGa
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+button {
+  width: auto;
+  margin-left: auto;
+  display: flex;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #0d1414dc;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+
+button.big-button {
+   padding: 1em 2em;
+   border: 2px solid #1c2d2e59;
+   border-radius: 1em;
+   background: none;
+   transform-style: preserve-3d;
+   transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+button.big-button::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none;
+  border-radius: inherit;
+  transform: translate3d(0, 0.75em, -1em);
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+
+button.big-button:hover {
+  background: #5b888b59;
+  transform: translate(0, 0.375em);
+}
+
+button.big-button:hover::before {
+  transform: translate3d(0, 0.75em, -1em);
+}
+

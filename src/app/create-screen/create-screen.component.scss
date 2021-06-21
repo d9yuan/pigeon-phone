@@ -1,0 +1,70 @@
+@import '../../styles.scss';
+
+div .create-screen-prompt {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    height: 35%;
+    text-align: center;
+    .prompt-message {
+        color: #1b1b1bf8;
+        font-size: 15px;
+        padding-left: 10px;
+        &-error {
+            color: rgba(199, 96, 96, 0.911);
+            font-size: 15px;
+            padding-left: 10px;
+        }
+        &-saved {
+            color: rgba(39, 209, 62, 0.911);
+            font-size: 15px;
+            padding-left: 10px;
+        }
+    }
+    .input-bubble-indicator {
+        height: 20px;
+        margin-top: 10px;
+        width: 100%;
+        div[class^="bubble-"]{
+            display: inline-block;
+            position: relative;
+            height: 7px;
+            width: 7px;
+            border: 1.5px solid #3a3a3856;
+            border-radius: 7px;
+        }
+    }
+
+}
+div .create-screen-digits {
+    position: relative;
+    margin-top: 60px;
+    height: 65%;
+    background: transparent;
+    padding: 10px;
+    text-align:center;
+}
+
+button[class^="passcode-"] {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 100;
+    position: relative;
+    height: 60px;
+    width: 60px;
+    border: 2px solid #3a3a3867;
+    border-radius: 35px;
+    display: inline-bcreate;
+    margin: 8px 8px;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    &.passcode-empty {
+        display: none;
+    }
+}
+
+div .digit-text {
+    color: #1b1b1bf8;
+    padding-top: 2px;
+}
