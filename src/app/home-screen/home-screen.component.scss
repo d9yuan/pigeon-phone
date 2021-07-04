@@ -1,0 +1,26 @@
+.home-screen {
+    .app-icons {
+        display: flex;
+        flex-wrap: wrap;
+	    margin: 20px auto 50px auto;
+        .icon {
+            margin: 0 auto 20px auto;
+            width: 60px;
+            height: 60px;
+            border-radius: 20%;
+            cursor: pointer;
+            .app-icon-img {
+                height: 100%;
+                background-size:100%;
+            } 
+            .app-name {
+                color: white;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                font-size: 12px;
+                font-weight: 150;
+            }
+        }
+    }
+}

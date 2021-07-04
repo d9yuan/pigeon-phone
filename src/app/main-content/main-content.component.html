@@ -1,15 +1,16 @@
 <div class='main-page' *ngIf='!isLoading'>
     <app-logout-button></app-logout-button>
     <div class="frame">
-        <div class="frame-content">
+        <div class="frame-content" style='background-image: url(../../assets/img/lock-screen-default.jpeg)'>
             <div class="frame-content-header">
                 <div class="frame-header">
                     <div class="frame-header-speaker"></div>
                     <div class="frame-header-camera"></div>
                 </div>
             </div>
-            <ng-container #ActivePage></ng-container> 
+            <ng-container #ActivePage></ng-container>
             <div class="frame-content-bottom">
+                <div class='hint-text text-focus-in'>{{hintText}}</div>
                 <div class="bottom-shape" (click)='bottomBarHandler();'></div>
             </div>
         </div>
