@@ -19,6 +19,7 @@ export class MainContentComponent implements OnInit {
   public isCreateMode: boolean = false;
   public isLoading: boolean = true;
   public profileLoading: boolean = true;
+  public hintTextAnimated: boolean = false;
   @ViewChild('ActivePage', { read: ViewContainerRef }) activePage: ViewContainerRef | undefined;
   constructor(private pigeonService: PigeonInfoService,
               private componentFactoryResolver: ComponentFactoryResolver) {
@@ -60,11 +61,7 @@ export class MainContentComponent implements OnInit {
   }
 
   private resetHintAnimation(): void {
-    if (!this.isLoading && document.getElementById('hint_text')) {
-      (document.getElementById('hint_text') as HTMLElement).classList.remove('text-focus-in');
-      (document.getElementById('hint_text') as HTMLElement).offsetHeight;
-      (document.getElementById('hint_text') as HTMLElement).classList.add('text-focus-in');
-    }
+    this.hintTextAnimated=false;
   }
 
   public bottomBarHandler(): void {

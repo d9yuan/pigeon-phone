@@ -10,7 +10,7 @@
             </div>
             <ng-container #ActivePage></ng-container>
             <div class="frame-content-bottom">
-                <div id='hint_text' class='hint-text text-focus-in'>{{hintText}}</div>
+                <div [ngClass]="!hintTextAnimated ? 'text-focus-in' : ''" class='hint-text' (animationend)="hintTextAnimated=true;">{{hintText}}</div>
                 <div class="bottom-shape" (click)='bottomBarHandler();'></div>
             </div>
         </div>
