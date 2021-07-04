@@ -60,28 +60,26 @@ export class MainContentComponent implements OnInit {
   }
 
   private resetHintAnimation(): void {
-    if (!this.isLoading) {
-      document.getElementsByClassName('hint-text')[0].classList.remove('text-focus-in');
-      (document.getElementsByClassName('hint-text')[0] as HTMLElement).offsetHeight;
-      document.getElementsByClassName('hint-text')[0].classList.add('text-focus-in');
+    if (!this.isLoading && document.getElementById('hint_text')) {
+      (document.getElementById('hint_text') as HTMLElement).classList.remove('text-focus-in');
+      (document.getElementById('hint_text') as HTMLElement).offsetHeight;
+      (document.getElementById('hint_text') as HTMLElement).classList.add('text-focus-in');
     }
   }
 
   public bottomBarHandler(): void {
+    this.resetHintAnimation();
     switch (this.activeComponent) {
       case this.componentSelector.entryScreen: {
         if (this.isCreateMode) {
-          this.resetHintAnimation();
           this.loadComponent(this.componentSelector.createScreen);
         }
         else {
-          this.resetHintAnimation();
           this.loadComponent(this.componentSelector.lockScreen);
         }
         break;
       }
       default: {
-        this.resetHintAnimation();
         this.loadComponent(this.componentSelector.entryScreen);
         break;
       }
