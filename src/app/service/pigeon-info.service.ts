@@ -12,6 +12,7 @@ import { AES, enc, mode, lib } from 'crypto-js';
 // Gets user token and make API calls
 export class PigeonInfoService {
   private readonly pigeonRoute: string = environment.apiUrl + 'api/pigeon';
+  private readonly shareRoute: string = environment.apiUrl + 'api/share';
   public hasLoaded: boolean = false;
   public isAuthenticated: boolean = false;
   public token: string | null = null;
@@ -50,6 +51,7 @@ export class PigeonInfoService {
     
     return decryptedFromText.toString(enc.Utf8);
   }
+
   public getPigeon() : BehaviorSubject<boolean>{
     const processDone: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     const pigeonHeader: HttpHeaders = new HttpHeaders({ContentType: 'application/json',
@@ -67,6 +69,21 @@ export class PigeonInfoService {
     const pigeonHeader: HttpHeaders = new HttpHeaders({ContentType: 'application/json',
                                                       Authorization: `Bearer ${this.token}`}); 
     this.http.post(this.pigeonRoute, { magnetCode: magnetCode }, { headers: pigeonHeader }).subscribe(response => processDone.next(true));
+    return processDone;
+  }
+
+  public getSharePigeon(pigeonId: string): BehaviorSubject<boolean> {
+    const processDone: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+    const pigeonHeader: HttpHeaders = new HttpHeaders({
+      ContentType: 'application/json',
+      Authorization: `Bearer ${this.token}`
+    });
+    this.http.post(this.shareRoute, { pigeonId: pigeonId }, { headers: pigeonHeader }).subscribe((code: any) => {
+      if (code) {
+        this.magnetCode = this.decipher(code.iv, code.content);
+        processDone.next(true);
+      }
+    });
     return processDone;
   }
 }

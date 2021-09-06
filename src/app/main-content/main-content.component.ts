@@ -1,4 +1,5 @@
 import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CreateScreenComponent } from '../create-screen/create-screen.component';
 import { EntryScreenComponent } from '../entry-screen/entry-screen.component';
 import { HomeScreenComponent } from '../home-screen/home-screen.component';
@@ -16,25 +17,18 @@ export class MainContentComponent implements OnInit {
                                      homeScreen: HomeScreenComponent,
                                      lockScreen: LockScreenComponent,
                                      entryScreen: EntryScreenComponent };
+  private pigeonId: string | null = null;
   public isCreateMode: boolean = false;
   public isLoading: boolean = true;
   public profileLoading: boolean = true;
   public hintTextAnimated: boolean = false;
   @ViewChild('ActivePage', { read: ViewContainerRef }) activePage: ViewContainerRef | undefined;
   constructor(private pigeonService: PigeonInfoService,
-              private componentFactoryResolver: ComponentFactoryResolver) {
-                this.pigeonService.loadUser().subscribe(done => {
-                  this.isLoading = !done;
-                  if (done) {
-                    this.pigeonService.getPigeon().subscribe(done => {
-                      this.profileLoading = !done;
-                      if (done && !this.pigeonService.magnetCode) {
-                        this.isCreateMode = true;
-                      }
-                    });
-                  }
-                });
-                
+              private componentFactoryResolver: ComponentFactoryResolver,
+              private route: ActivatedRoute) {
+                if (this.route.snapshot.paramMap.has('pigeonId')) {
+                  this.pigeonId = this.route.snapshot.paramMap.get('pigeonId');
+                }
               }
 
   private loadComponent(componentClass: any): void {
@@ -61,7 +55,7 @@ export class MainContentComponent implements OnInit {
   }
 
   private resetHintAnimation(): void {
-    this.hintTextAnimated=false;
+    this.hintTextAnimated = false;
   }
 
   public bottomBarHandler(): void {
@@ -96,6 +90,24 @@ export class MainContentComponent implements OnInit {
     }
   }
   public ngOnInit(): void {
+    this.pigeonService.loadUser().subscribe(done => {
+      this.isLoading = !done;
+      if (done) {
+        if (!this.pigeonId) {
+          this.pigeonService.getPigeon().subscribe(done => {
+            this.profileLoading = !done;
+            if (done && !this.pigeonService.magnetCode) {
+              this.isCreateMode = true;
+            }
+          });
+        } else {
+          this.pigeonService.getSharePigeon(this.pigeonId).subscribe(done => {
+            this.profileLoading = !done;
+            this.isCreateMode = false;
+          })
+        }
+      }
+    });
     this.loadComponent(this.componentSelector.entryScreen);
   }
 }

@@ -10,6 +10,5 @@ export class LoginButtonComponent {
   public redirect_uri = location.origin;
   public redirect_to: string = '/phone';
   constructor(public auth: AuthService) { 
-      console.log(this.redirect_uri)
   }
 }

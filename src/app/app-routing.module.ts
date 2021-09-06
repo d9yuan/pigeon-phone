@@ -5,9 +5,9 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { AuthGuard } from '@auth0/auth0-angular';
 const routes: Routes = [
   { path : '', redirectTo : 'welcome', pathMatch : 'full'},
-  { path: 'welcome', component: WelcomePageComponent },
-  { path : 'phone', component: MainContentComponent, pathMatch : 'full', canActivate: [AuthGuard]}
-
+  { path : 'welcome', component: WelcomePageComponent },
+  { path : 'phone', component: MainContentComponent, pathMatch : 'full', canActivate: [AuthGuard]},
+  { path : 'share/:pigeonId', component: MainContentComponent, pathMatch : 'full', canActivate: [AuthGuard]},
 ];
 
 @NgModule({
