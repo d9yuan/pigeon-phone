@@ -1,4 +1,4 @@
-# PIphone
+# Pigeon-Phone
 * Architecture Overview
 ![Alt text here](pigeon-phone.png)
 * This page is hosted on https://pigeon-phone.web.app
@@ -11,7 +11,7 @@
 * (Upcoming) Create notes in the Notes App and share your pigeon-phone with others to allow them see the notes. Recipients need to have the 4-digit pin.
 
 * The purpose of this project is to experience fullstack web development and experiment cloud technologies.
-
+#
 * Huge thanks to the authors on codepen. I have referenced them directly in .scss files.
 
 * Please view README.md without Dark Mode on.
