@@ -4,10 +4,10 @@
 * This page is hosted on https://pigeon-phone.web.app
 
 # Features
-* User login via Auth0
-* Create a 4-digit pin for your pigeon-phone
-* AES encryption on the 4-digit pin
-* Unlock your pigeon-phone
+* User login via Auth0.
+* Create a 4-digit pin for your pigeon-phone.
+* AES encryption on the 4-digit pin when transferring via HTTP requests.
+* Unlock your pigeon-phone.
 * (Upcoming) Create notes in the Notes App and share your pigeon-phone with others to allow them see the notes. Recipients need to have the 4-digit pin.
 
 * The purpose of this project is to experience fullstack web development and experiment cloud technologies.
